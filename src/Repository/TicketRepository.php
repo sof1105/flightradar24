@@ -63,4 +63,17 @@ class TicketRepository extends ServiceEntityRepository
 //            ->getOneOrNullResult()
 //        ;
 //    }
+
+    public function getSeatsNumberByFlightAndDate($flightNumber,$departureTime): ?array
+    {
+        return $this->createQueryBuilder('t')
+            ->select('t.seat')
+            ->where('t.flightNumber = :flightNumber')
+            ->setParameter('flightNumber', $flightNumber)
+            ->andWhere('t.departureTime = :departureTime')
+            ->setParameter('departureTime', $departureTime)
+            ->getQuery()
+            ->getArrayResult()
+        ;
+    }
 }

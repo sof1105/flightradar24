@@ -1,0 +1,126 @@
+{
+	"info": {
+		"_postman_id": "7fe66c5d-0b0e-44b6-93ee-870970153c95",
+		"name": "flightradar",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "27523997"
+	},
+	"item": [
+		{
+			"name": "http://127.0.0.1:8000/api/login_check",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"username\": \"sofien@test.com\",\n    \"password\": \"sofien\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/login_check",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"login_check"
+					],
+					"query": [
+						{
+							"key": "username",
+							"value": null,
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://127.0.0.1:8000/api/users/me",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE2ODQ2MTkyMTIsImV4cCI6MTY4NDYyMjgxMiwicm9sZXMiOlsiUk9MRV9VU0VSIl0sInVzZXJuYW1lIjoic29maWVuQHRlc3QuY29tIn0.CUMspKf7rheU1TODTt-nqvIhf12JELgamY7EBJ6dAw_nGaP-7OSsGdHhGKIRcpcklhL7pd-oFNBHuGZ1FXmI6YQTk4t9wcFWbqY3xzATpUOJcZOoIkQ9vyI6R2FsOqaw2fxgz7w6nEJTnAeDbKrRrgVp-QKR1MfXTuiCNhMf5BcQtiJY0VCHUTFBEj2j8GiNcm8-90OhNUznCo-oqYsFF_9iG5F1rIlUJ3AdwMMtgrdcKNeA3O_OXaqB5W94HQWoVTt-4SO6crYJ6L4WNuMwEQn1EqlWp6sXeAQ0ayh7TRvmfQgOedt57s0iwh9IIrLS9kCWyTTY1ISmBXvxsWHI5g",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/users/me",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"users",
+						"me"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://127.0.0.1:8000/api/tickets/create",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE2ODQ3NDc4MzgsImV4cCI6MTY4NDc1MTQzOCwicm9sZXMiOlsiUk9MRV9VU0VSIl0sInVzZXJuYW1lIjoic29maWVuQHRlc3QuY29tIn0.MXttVftUSiQu4ZR2D4RWzeZ-1Gsj-cYE6EvXVwywHEp3ShvP1bnRgYpiUrfpRWNtpgGlW6i44QQtW2-MPxuWsRafErDNaIxfLpTcNn2RENuC9rG9fNJAbg1q3OngqwATDmVumPSDaGAn9jC6jc-sNcEz-vo37IZlmKly9TjK4N-_8cRQWEHOm8Re-Ux26X5G1cqN1cQWqYGnF_k8zC7ACBWI6W6EcQvqIFd4tEDhkRD8c7YZa0FmufKbd8gtdUue-t_KjilEL3ZwejAwVfIsCBwiUVA2JJKOGxDtI83vouzekpPbzMsYxLcRSyloRM79BxSRyU8SqMcjPuiSEtKoXQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"departure_time\": {\n        \"date\": \"2023-05-22 11:23:52.000000\",\n        \"timezone_type\": 3,\n        \"timezone\": \"Europe/Paris\"    \n    },\n    \"source\": \"tunis\",\n    \"destination\": \"italy\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/tickets/create",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"tickets",
+						"create"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
